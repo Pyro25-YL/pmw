@@ -190,7 +190,7 @@ nav.scrolled {
 
 /* floating dashboard mock */
 .dash-mock {
-  width: 520px; background: var(--surface); border: 1px solid var(--border2);
+  width: 100%; max-width: 520px; background: var(--surface); border: 1px solid var(--border2);
   border-radius: 20px; overflow: hidden;
   box-shadow: 0 0 80px rgba(0,212,255,0.1), 0 40px 80px rgba(0,0,0,0.5);
   animation: float 6s ease-in-out infinite;
