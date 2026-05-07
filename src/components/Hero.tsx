@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { HERO_STATS, HERO_BAR_HEIGHTS } from '../data';
 
 const HeroDashboard: React.FC = () => (
-  <div className="hero-visual">
+  <div className="hero-visual-panel">
     <div style={{ position: 'relative' }}>
       <div className="dash-mock">
         <div className="dash-bar">
