@@ -170,11 +170,23 @@ nav.scrolled {
 .stat-label { font-size: 13px; color: var(--text3); font-weight: 500; }
 
 /* hero visual */
-.hero-visual {
-  position: absolute; right: -60px; top: 50%; transform: translateY(-50%);
-  width: 580px; pointer-events: none; display: flex; align-items: center; justify-content: center;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
 }
-@media(max-width:1100px) { .hero-visual { display: none; } }
+@media(max-width:1100px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual-panel { display: none; }
+}
+.hero-visual-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
 
 /* floating dashboard mock */
 .dash-mock {
