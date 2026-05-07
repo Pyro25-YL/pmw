@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
     <section id="hero">
       <div className="glow-orb" style={{ width: '500px', height: '500px', background: 'var(--blue)', top: '-100px', left: '-100px' }} />
       <div className="glow-orb" style={{ width: '400px', height: '400px', background: 'var(--purple)', top: '200px', right: '100px' }} />
-      <div className="container" style={{ position: 'relative' }}>
+      <div className="container hero-grid">
         <div className="hero-content">
           <div className="hero-eyebrow">
             <span className="badge">🤖 AI-Powered IT Solutions</span>
