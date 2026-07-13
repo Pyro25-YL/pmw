@@ -1,5 +1,6 @@
 import React from 'react';
 import { PRICING_PLANS } from '../data';
+import { Link } from '../router';
 
 const Pricing: React.FC = () => (
   <section id="pricing">
@@ -30,13 +31,13 @@ const Pricing: React.FC = () => (
                 </li>
               ))}
             </ul>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className={`btn ${plan.ctaVariant === 'cyan' ? 'btn-cyan' : 'btn-outline'}`}
               style={{ width: '100%', justifyContent: 'center' }}
             >
               {plan.cta}
-            </a>
+            </Link>
           </div>
         ))}
       </div>

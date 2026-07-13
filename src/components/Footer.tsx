@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from '../router';
 
 const Footer: React.FC = () => (
   <footer>
     <div className="container">
       <div className="footer-grid">
         <div className="footer-brand">
-          <a href="#" className="logo" style={{ fontSize: '18px' }}>
+          <Link to="/" className="logo" style={{ fontSize: '18px' }}>
             <div className="logo-icon" style={{ width: '32px', height: '32px', fontSize: '16px' }}>⚡</div>
             Nexa<span>Mind</span>
-          </a>
+          </Link>
           <p>Your One Stop IT Solutions. Solusi teknologi AI terintegrasi untuk transformasi bisnis digital Indonesia.</p>
           <div className="footer-social">
             {['📸', '💼', '🐦', '💬'].map((icon, i) => (
@@ -21,7 +22,7 @@ const Footer: React.FC = () => (
           <h4>Layanan</h4>
           <ul>
             {['AI Development', 'Smart Chatbot', 'Website Dev', 'Mobile App', 'UI/UX Design'].map((item) => (
-              <li key={item}><a href="#">{item}</a></li>
+              <li key={item}><Link to="/services">{item}</Link></li>
             ))}
           </ul>
         </div>
@@ -30,7 +31,7 @@ const Footer: React.FC = () => (
           <h4>Produk</h4>
           <ul>
             {['NexaFinance', 'NexaInvest', 'NexaPOS', 'Enterprise'].map((item) => (
-              <li key={item}><a href="#">{item}</a></li>
+              <li key={item}><Link to="/products">{item}</Link></li>
             ))}
           </ul>
         </div>
@@ -38,8 +39,14 @@ const Footer: React.FC = () => (
         <div className="footer-col">
           <h4>Perusahaan</h4>
           <ul>
-            {['About Us', 'Blog', 'Portfolio', 'Karir', 'Kontak'].map((item) => (
-              <li key={item}><a href="#">{item}</a></li>
+            {[
+              { label: 'About Us', to: '/' },
+              { label: 'Blog', to: '/blog' },
+              { label: 'Portfolio', to: '/portfolio' },
+              { label: 'Karir', to: '/contact' },
+              { label: 'Kontak', to: '/contact' },
+            ].map((item) => (
+              <li key={item.label}><Link to={item.to}>{item.label}</Link></li>
             ))}
           </ul>
         </div>

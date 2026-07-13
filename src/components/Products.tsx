@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PRODUCTS } from '../data';
 import type { Product, ProductTab } from '../types';
+import { Link } from '../router';
 
 // ─── Mockup visuals per product ───
 const FinanceMockup: React.FC = () => (
@@ -121,7 +122,7 @@ const ProductPanel: React.FC<Product> = (product) => {
             ))}
           </div>
           <div style={{ marginTop: '20px' }}>
-            <a href="#contact" className="btn btn-primary">Coba Sekarang →</a>
+            <Link to="/contact" className="btn btn-primary">Coba Sekarang →</Link>
           </div>
         </div>
 

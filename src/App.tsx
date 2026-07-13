@@ -2,26 +2,36 @@ import React, { useEffect } from 'react';
 
 import Particles from './components/Particles';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Products from './components/Products';
-import Portfolio from './components/Portfolio';
-import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
-import Blog from './components/Blog';
-import Faq from './components/Faq';
-import Newsletter from './components/Newsletter';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
+import { useRouter } from './router';
+import {
+  Home,
+  ServicesPage,
+  ProductsPage,
+  PortfolioPage,
+  PricingPage,
+  BlogPage,
+  FaqPage,
+  ContactPage,
+} from './pages';
 
-const Divider: React.FC = () => (
-  <div className="section-divider" />
-);
+const ROUTES: Record<string, React.FC> = {
+  '/': Home,
+  '/services': ServicesPage,
+  '/products': ProductsPage,
+  '/portfolio': PortfolioPage,
+  '/pricing': PricingPage,
+  '/blog': BlogPage,
+  '/faq': FaqPage,
+  '/contact': ContactPage,
+};
 
 const App: React.FC = () => {
-  // Intersection observer for reveal animations
+  const { path } = useRouter();
+  const PageComponent = ROUTES[path] ?? Home;
+
+  // Intersection observer for reveal animations — re-run whenever the page changes
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -31,43 +41,14 @@ const App: React.FC = () => {
     );
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [path]);
 
   return (
     <>
       <Particles />
       <Navbar />
 
-      <Hero />
-      <Divider />
-
-      <About />
-      <Divider />
-
-      <Services />
-      <Divider />
-
-      <Products />
-      <Divider />
-
-      <Portfolio />
-      <Divider />
-
-      <Testimonials />
-      <Divider />
-
-      <Pricing />
-      <Divider />
-
-      <Blog />
-      <Divider />
-
-      <Faq />
-
-      <Newsletter />
-      <Divider />
-
-      <Contact />
+      <PageComponent />
 
       <Footer />
 

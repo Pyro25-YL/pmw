@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { HERO_STATS, HERO_BAR_HEIGHTS } from '../data';
+import { Link } from '../router';
 
 const HeroDashboard: React.FC = () => (
   <div className="hero-visual-panel">
@@ -74,8 +75,8 @@ const Hero: React.FC = () => {
             untuk transformasi bisnis modern Indonesia.
           </p>
           <div className="hero-actions">
-            <a href="#contact" className="btn btn-primary">🚀 Konsultasi Gratis</a>
-            <a href="#products" className="btn btn-outline">⚡ Lihat Produk</a>
+            <Link to="/contact" className="btn btn-primary">🚀 Konsultasi Gratis</Link>
+            <Link to="/products" className="btn btn-outline">⚡ Lihat Produk</Link>
           </div>
           <div className="hero-stats">
             {HERO_STATS.map((s) => (
